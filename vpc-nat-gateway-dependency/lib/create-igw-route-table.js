@@ -1,7 +1,5 @@
 'use strict';
 
-const immutable = require('object-path-immutable');
-
 const helpers = require('./helpers');
 const describeFilter = helpers.describeFilter;
 const updateState = helpers.updateState;
