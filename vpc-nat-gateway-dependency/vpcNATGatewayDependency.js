@@ -26,7 +26,11 @@ const vpcNATGatewayDependecy = (event, callback) => {
 
   const createAllMissingResources = R.composeP(findIGWRouteTable, findNATRouteTable, findInternetGateway, findNATGateway, findSubnets);
   return createAllMissingResources(initialState)
-      .then(result => result.callback(null, result))
+      .then(result => {
+          console.log(JSON.stringify(result));
+          console.log(typeof result.callback);
+          return callback(null, result);
+      })
       .catch(initialState.callback);
 };
 
