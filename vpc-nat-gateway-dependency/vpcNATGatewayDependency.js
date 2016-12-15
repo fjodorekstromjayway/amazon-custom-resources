@@ -50,6 +50,7 @@ const createOptions = (event, context, status, data, err) => {
 
     const parsedUrl = url.parse(event.ResponseURL);
     return {
+        uri: event.ResponseURL,
         hostname: parsedUrl.hostname,
         port: 443,
         path: parsedUrl.path,
